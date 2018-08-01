@@ -14,4 +14,4 @@ yarn-error.log*
 *.sln
 
 
-./public/build/
+public/build/
