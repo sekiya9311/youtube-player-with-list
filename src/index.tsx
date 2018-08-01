@@ -1,7 +1,11 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
+import { Application } from './components/Application';
+
 ReactDOM.render(
-  <h1>Hello, world!</h1>,
+  <div>
+    <Application />
+  </div>,
   document.getElementById('root')
 );
