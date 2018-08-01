@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/sekiya9311/youtube-player-with-list#readme",
   "devDependencies": {
+    "axios": "^0.18.0",
     "electron": "^2.0.5",
     "source-map-loader": "^0.2.3",
     "ts-loader": "^4.4.2",
