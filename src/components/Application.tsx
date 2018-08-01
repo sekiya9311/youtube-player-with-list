@@ -2,12 +2,25 @@ import * as React from 'react';
 
 import { Player } from './Player';
 
-export class Application extends React.Component {
+interface ApplicationState {
+  videoId: string
+}
+
+const youtubeUrl = 'https://www.youtube.com/embed/';
+
+export class Application extends React.Component<{}, ApplicationState> {
+  constructor() {
+    super({});
+    this.state = {
+      videoId: 'KnsLbogE4ps'
+    };
+  }
   render() {
-    const address: string = "https://www.youtube.com/embed/KnsLbogE4ps";
     return (
       <div>
-        <Player videoAddress={ address } />
+        <input type="text" value={this.state.videoId}
+          onChange={e => this.setState({videoId: e.target.value})} />
+        <Player videoAddress={ youtubeUrl + this.state.videoId } />
       </div>
     );
   }
