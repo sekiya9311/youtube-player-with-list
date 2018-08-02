@@ -2,6 +2,8 @@ import * as React from 'react';
 
 interface PlayerProps {
   videoAddress: string;
+  iframeWidth: number;
+  iframeHeight: number;
 }
 
 export class Player extends React.Component<PlayerProps> {
@@ -10,10 +12,8 @@ export class Player extends React.Component<PlayerProps> {
   }
   render() {
     return (
-      <div>
-        <iframe width="560" height="315" src={this.props.videoAddress}
-                frameBorder="0" allowFullScreen />
-      </div>
+      <iframe width={this.props.iframeWidth} height={this.props.iframeHeight}
+        src={this.props.videoAddress} frameBorder="0" allowFullScreen />
     );
   }
 }
