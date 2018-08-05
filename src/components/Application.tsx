@@ -1,11 +1,13 @@
 import * as React from 'react';
 
 import { Player } from './Player';
+import { ChannelLists } from '../model/ChannelLists';
 
 interface ApplicationState {
   videoId: string;
   videoHeight: number;
   videoWidth: number;
+  channelLists: ChannelLists;
 }
 
 const youtubeUrl = 'https://www.youtube.com/embed/';
@@ -16,7 +18,8 @@ export class Application extends React.Component<{}, ApplicationState> {
     this.state = {
       videoId: 'KnsLbogE4ps',
       videoHeight: 315,
-      videoWidth: 560
+      videoWidth: 560,
+      channelLists: { lists: [] }
     };
   }
   render() {

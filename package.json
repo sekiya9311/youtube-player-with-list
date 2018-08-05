@@ -21,7 +21,7 @@
   "devDependencies": {
     "axios": "^0.18.0",
     "electron": "^2.0.5",
-    "gulp": "^3.9.1",
+    "gulp": "^4.0.0",
     "source-map-loader": "^0.2.3",
     "ts-loader": "^4.4.2",
     "typescript": "^3.0.1",
