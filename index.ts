@@ -25,7 +25,6 @@ class MainApplication {
 
   createWindow() {
     this.mainWindow = new BrowserWindow({ width: 800, height: 600 });
-    console.log(__dirname);
     this.mainWindow.loadURL(url.format({
       pathname: path.resolve(__dirname, '..', 'index.html'),
       protocol: 'file:',
