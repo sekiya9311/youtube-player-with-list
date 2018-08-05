@@ -2,7 +2,7 @@
   "name": "youtube-player-with-list",
   "version": "1.0.0",
   "description": "> youtubeチャンネルをTwitterのリスト感覚で管理するやつ",
-  "main": "index.js",
+  "main": "index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "electron": "electron .",
@@ -21,6 +21,7 @@
   "devDependencies": {
     "axios": "^0.18.0",
     "electron": "^2.0.5",
+    "gulp": "^3.9.1",
     "source-map-loader": "^0.2.3",
     "ts-loader": "^4.4.2",
     "typescript": "^3.0.1",

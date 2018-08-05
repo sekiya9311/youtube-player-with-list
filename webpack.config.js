@@ -7,6 +7,7 @@ module.exports = {
 
   entry: {
     app: './src',
+    main: './index.ts'
   },
 
   output: {
@@ -41,5 +42,8 @@ module.exports = {
         }
       }
     }
+  },
+  node: {
+    __dirname: false
   }
 };
