@@ -1,11 +1,23 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 
-import { Application } from './components/Application';
+import {
+  Route,
+  Switch,
+  BrowserRouter
+} from 'react-router-dom';
+
+import { PlayVideo } from './components/PlayVIdeo';
+
+const Routing = (
+  <BrowserRouter>
+    <Switch>
+      <Route path="/" component={PlayVideo} />
+    </Switch>
+  </BrowserRouter>
+);
 
 ReactDOM.render(
-  <div>
-    <Application />
-  </div>,
+  Routing,
   document.getElementById('root')
 );

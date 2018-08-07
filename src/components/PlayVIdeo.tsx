@@ -13,7 +13,7 @@ import { Player } from './Player';
 
 import { ChannelLists } from '../model/ChannelLists';
 
-interface ApplicationState {
+interface PlayVideoState {
   videoId: string;
   videoHeight: number;
   videoWidth: number;
@@ -22,7 +22,7 @@ interface ApplicationState {
 
 const youtubeUrl = 'https://www.youtube.com/embed/';
 
-export class Application extends React.Component<{}, ApplicationState> {
+export class PlayVideo extends React.Component<{}, PlayVideoState> {
   constructor() {
     super({});
     this.state = {
