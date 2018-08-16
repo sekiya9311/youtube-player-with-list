@@ -1,5 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
+const hardSourceWebpackPlugin = require('hard-source-webpack-plugin');
 
 module.exports = {
   target: 'electron-renderer',
@@ -45,5 +46,8 @@ module.exports = {
   },
   node: {
     __dirname: false
-  }
+  },
+  plugins: [
+    new hardSourceWebpackPlugin()
+  ]
 };
