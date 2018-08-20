@@ -1,14 +1,5 @@
 import * as React from 'react';
 
-import { 
-  AppBar, 
-  Toolbar,
-  IconButton
-} from '@material-ui/core';
-import {
-  Menu
-} from '@material-ui/icons';
-
 import { Player } from './Player';
 
 import { ChannelLists } from '../model/ChannelLists';
@@ -35,13 +26,6 @@ export class PlayVideo extends React.Component<{}, PlayVideoState> {
   render() {
     return (
       <div>
-        <AppBar position="static">
-          <Toolbar>
-            <IconButton>
-              <Menu />
-            </IconButton>
-          </Toolbar>
-        </AppBar>
         <input type="text" value={this.state.videoId}
           onChange={e => this.setState({videoId: e.target.value})} />
         <Player videoAddress={ youtubeUrl + this.state.videoId } 
