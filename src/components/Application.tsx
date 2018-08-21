@@ -3,7 +3,8 @@ import * as React from 'react';
 import {
   AppBar,
   Toolbar,
-  IconButton
+  IconButton,
+  Drawer
 } from '@material-ui/core';
 
 import {
@@ -17,31 +18,48 @@ import {
 } from 'react-router-dom';
 
 import { PlayVideo } from './PlayVIdeo';
+import { ChannelLists } from '../model/ChannelLists';
+import { DrawerMenu } from './DrawerMenu';
 
-const Routing = () => (
-  <BrowserRouter>
-    <Switch>
-      <Route path="/" component={PlayVideo} />
-    </Switch>
-  </BrowserRouter>
-);
+interface ApplicationState {
+  sideBarOpen: boolean,
+  list: ChannelLists
+};
 
-export class Application extends React.Component<{}, {}> {
+export class Application extends React.Component<{}, ApplicationState> {
   constructor() {
     super({});
+    this.state = {
+      sideBarOpen: false,
+      list: {lists: []}
+    };
   }
   render() {
     return (
       <div>
         <AppBar position="static">
           <Toolbar>
-            <IconButton>
+            <IconButton onClick={this.setSidebarState(true)}>
               <Menu />
             </IconButton>
           </Toolbar>
         </AppBar>
-        <Routing />
+        <Drawer open={this.state.sideBarOpen} onClose={this.setSidebarState(false)}>
+          <DrawerMenu list={this.state.list} />
+        </Drawer>
+        <BrowserRouter>
+          <Switch>
+            <Route path="/" component={PlayVideo} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
+  }
+  setSidebarState(sideBarState: boolean) {
+    return () => {
+      this.setState({
+        sideBarOpen: sideBarState,
+      });
+    }
   }
 }
